@@ -125,18 +125,19 @@ const AuthPage = () => {
           </p>
 
           <button
-            className="auth-btn login-btn"
-            onClick={() => alert("Login flow coming next")}
-          >
-            Login
-          </button>
+  className="auth-btn login-btn"
+  onClick={() => navigate("/login")}
+>
+  Login
+</button>
 
-          <button
-            className="auth-btn signup-btn"
-            onClick={() => alert("Signup flow coming next")}
-          >
-            Sign Up
-          </button>
+<button
+  className="auth-btn signup-btn"
+  onClick={() => navigate("/signup")}
+>
+  Sign Up
+</button>
+
 
           <div className="divider">Prototype demo • No real authentication</div>
 
