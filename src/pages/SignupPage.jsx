@@ -104,35 +104,36 @@ const SignupPage = () => {
           <h2>Sign Up As</h2>
 
           <div className="roles">
-            <div
-              className="role-card"
-              onClick={() => alert("User signup coming next")}
-            >
-              <div className="role-title">User</div>
-              <div className="role-desc">
-                Create an account to order exact medicines with verification.
-              </div>
-            </div>
+           <div
+  className="role-card"
+  onClick={() => navigate("/signup/user")}
+>
+  <div className="role-title">User</div>
+  <div className="role-desc">
+    Create an account to order verified medicines.
+  </div>
+</div>
 
-            <div
-              className="role-card"
-              onClick={() => alert("Delivery signup coming next")}
-            >
-              <div className="role-title">Delivery Partner</div>
-              <div className="role-desc">
-                Deliver medicines and ensure correct pickup and billing.
-              </div>
-            </div>
+<div
+  className="role-card"
+  onClick={() => navigate("/signup/delivery")}
+>
+  <div className="role-title">Delivery Partner</div>
+  <div className="role-desc">
+    Join Medigo as a verified delivery agent.
+  </div>
+</div>
 
-            <div
-              className="role-card"
-              onClick={() => alert("Chemist signup coming next")}
-            >
-              <div className="role-title">Chemist</div>
-              <div className="role-desc">
-                Partner as a pharmacy and ensure no substitution.
-              </div>
-            </div>
+<div
+  className="role-card"
+  onClick={() => navigate("/signup/chemist")}
+>
+  <div className="role-title">Chemist</div>
+  <div className="role-desc">
+    Partner as a pharmacy and ensure trust.
+  </div>
+</div>
+
           </div>
 
           <div className="back" onClick={() => navigate("/auth")}>

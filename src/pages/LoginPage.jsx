@@ -104,35 +104,36 @@ const LoginPage = () => {
           <h2>Login As</h2>
 
           <div className="roles">
-            <div
-              className="role-card"
-              onClick={() => alert("User login coming next")}
-            >
-              <div className="role-title">User</div>
-              <div className="role-desc">
-                Order medicines from exact stores prescribed by your doctor.
-              </div>
-            </div>
+           <div
+  className="role-card"
+  onClick={() => navigate("/login/user")}
+>
+  <div className="role-title">User</div>
+  <div className="role-desc">
+    Order medicines from exact stores prescribed by your doctor.
+  </div>
+</div>
 
-            <div
-              className="role-card"
-              onClick={() => alert("Delivery login coming next")}
-            >
-              <div className="role-title">Delivery Partner</div>
-              <div className="role-desc">
-                Pick up medicines from assigned stores and upload bills.
-              </div>
-            </div>
+<div
+  className="role-card"
+  onClick={() => navigate("/login/delivery")}
+>
+  <div className="role-title">Delivery Partner</div>
+  <div className="role-desc">
+    Pick up medicines and upload bills for verification.
+  </div>
+</div>
 
-            <div
-              className="role-card"
-              onClick={() => alert("Chemist login coming next")}
-            >
-              <div className="role-title">Chemist</div>
-              <div className="role-desc">
-                Verify orders and ensure no substitution occurs.
-              </div>
-            </div>
+<div
+  className="role-card"
+  onClick={() => navigate("/login/chemist")}
+>
+  <div className="role-title">Chemist</div>
+  <div className="role-desc">
+    Verify orders and ensure no substitution.
+  </div>
+</div>
+
           </div>
 
           <div className="back" onClick={() => navigate("/auth")}>
