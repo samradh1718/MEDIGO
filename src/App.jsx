@@ -20,6 +20,17 @@ import UploadPrescription from "./pages/user/UploadPrescription";
 
 import ProtectedUserRoute from "./routes/ProtectedUserRoute";
 
+
+import ChemistDashboard from "./pages/chemist/ChemistDashboard";
+import ChemistOrderDetails from "./pages/chemist/ChemistOrderDetails";
+import ChemistBillUpload from "./pages/chemist/ChemistBillUpload";
+
+
+import DeliveryDashboard from "./pages/delivery/DeliveryDashboard"
+import DeliveryOrderDetails from "./pages/delivery/DeliveryOrderDetails"
+
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -39,6 +50,18 @@ function App() {
         <Route path="/signup/user" element={<UserSignup />} />
         <Route path="/signup/delivery" element={<DeliverySignup />} />
         <Route path="/signup/chemist" element={<ChemistSignup />} />
+
+        <Route path="/chemist/dashboard" element={<ChemistDashboard />} />
+<Route path="/chemist/order/:id" element={<ChemistOrderDetails />} />
+<Route path="/chemist/order/:id/bill" element={<ChemistBillUpload />} />
+
+
+<Route path="/delivery/dashboard" element={<DeliveryDashboard />} />
+<Route path="/delivery/order/:id" element={<DeliveryOrderDetails />} />
+
+
+
+
 
         {/* PROTECTED USER ROUTES */}
         <Route
@@ -78,6 +101,8 @@ function App() {
         />
       </Routes>
     </BrowserRouter>
+
+    
   );
 }
 

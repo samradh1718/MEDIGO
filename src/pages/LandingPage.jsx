@@ -11,80 +11,91 @@ const LandingPage = () => {
           margin: 0;
           padding: 0;
           box-sizing: border-box;
-          font-family: "Segoe UI", Arial, sans-serif;
+          font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont;
         }
 
         body {
-          background: #ffffff;
-          color: #102a43;
+          background: #020617;
+          color: #ffffff;
+        }
+
+        /* ---------------- BACKGROUND GLOW ---------------- */
+        .glow {
+          position: absolute;
+          width: 420px;
+          height: 420px;
+          background: rgba(66, 165, 245, 0.45);
+          filter: blur(140px);
+          border-radius: 50%;
+          z-index: 0;
+        }
+
+        .glow.green {
+          background: rgba(102, 187, 106, 0.45);
         }
 
         /* ---------------- NAVBAR ---------------- */
         .navbar {
+          position: relative;
+          z-index: 2;
           width: 100%;
-          padding: 20px 60px;
+          padding: 22px 60px;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          border-bottom: 1px solid #e6eef6;
-          background: #ffffff;
+          backdrop-filter: blur(16px);
+          background: rgba(255,255,255,0.08);
+          border-bottom: 1px solid rgba(255,255,255,0.15);
         }
 
         .logo {
           font-size: 26px;
           font-weight: 800;
-          color: #0a66c2;
+          color: #90caf9;
         }
 
         .tagline {
           font-size: 14px;
-          color: #486581;
+          opacity: 0.85;
         }
 
         /* ---------------- HERO ---------------- */
         .hero {
-          width: 100%;
-          padding: 120px 20px;
+          position: relative;
+          z-index: 1;
+          min-height: 100svh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 140px 20px 100px;
           text-align: center;
-          background: linear-gradient(
-            135deg,
-            #0a66c2 0%,
-            #0e8ef1 60%,
-            #19c2a7 100%
-          );
-          color: white;
         }
 
         .hero h1 {
-          font-size: 44px;
-          max-width: 950px;
-          margin: auto;
+          font-size: 48px;
+          max-width: 980px;
           margin-bottom: 24px;
           font-weight: 800;
-          line-height: 1.2;
+          line-height: 1.15;
         }
 
         .hero span {
-          color: #eafff9;
+          color: #a5d6ff;
         }
 
         .hero p {
-          max-width: 720px;
-          margin: auto;
+          max-width: 760px;
           font-size: 18px;
           line-height: 1.7;
-          color: #f0f8ff;
+          opacity: 0.9;
         }
 
-        /* ---------------- SECTION ---------------- */
+        /* ---------------- SECTIONS ---------------- */
         .section {
-          width: 100%;
-          padding: 90px 20px;
-          background: #ffffff;
-        }
-
-        .section.alt {
-          background: #f5faff;
+          position: relative;
+          z-index: 1;
+          padding: 100px 20px;
         }
 
         .container {
@@ -93,10 +104,9 @@ const LandingPage = () => {
         }
 
         .section h2 {
-          font-size: 32px;
-          margin-bottom: 30px;
+          font-size: 34px;
+          margin-bottom: 32px;
           font-weight: 700;
-          color: #102a43;
         }
 
         /* ---------------- PROBLEM ---------------- */
@@ -105,46 +115,46 @@ const LandingPage = () => {
         }
 
         .problem-list li {
-          padding-left: 28px;
-          margin-bottom: 14px;
+          padding-left: 30px;
+          margin-bottom: 16px;
           position: relative;
           font-size: 17px;
-          color: #334e68;
+          opacity: 0.9;
         }
 
         .problem-list li::before {
           content: "⚠";
           position: absolute;
           left: 0;
-          color: #d64545;
-          font-size: 16px;
+          color: #ff8a80;
         }
 
         /* ---------------- STEPS ---------------- */
         .steps {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 30px;
+          gap: 28px;
         }
 
         .step {
-          background: #ffffff;
-          border-radius: 16px;
+          background: rgba(255,255,255,0.12);
+          backdrop-filter: blur(16px);
+          border-radius: 22px;
           padding: 36px;
-          box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-          border-top: 6px solid #19c2a7;
+          border: 1px solid rgba(255,255,255,0.18);
+          box-shadow: 0 30px 80px rgba(0,0,0,0.5);
         }
 
         .step h3 {
           font-size: 20px;
           margin-bottom: 12px;
-          color: #0a66c2;
+          color: #90caf9;
         }
 
         .step p {
           font-size: 16px;
           line-height: 1.6;
-          color: #486581;
+          opacity: 0.85;
         }
 
         /* ---------------- TRUST ---------------- */
@@ -154,72 +164,67 @@ const LandingPage = () => {
 
         .trust-list li {
           padding-left: 30px;
-          margin-bottom: 16px;
+          margin-bottom: 18px;
           position: relative;
           font-size: 17px;
-          color: #334e68;
+          opacity: 0.9;
         }
 
         .trust-list li::before {
           content: "✔";
           position: absolute;
           left: 0;
-          color: #19c2a7;
+          color: #66bb6a;
           font-weight: bold;
         }
 
         /* ---------------- CTA ---------------- */
         .cta {
-          width: 100%;
-          padding: 110px 20px;
-          background: linear-gradient(
-            135deg,
-            #083b7a,
-            #0a66c2
-          );
-          color: white;
+          padding: 120px 20px;
           text-align: center;
+          position: relative;
+          z-index: 1;
         }
 
         .cta h2 {
-          font-size: 34px;
+          font-size: 36px;
           margin-bottom: 18px;
           font-weight: 800;
         }
 
         .cta p {
-          max-width: 760px;
+          max-width: 780px;
           margin: auto;
-          margin-bottom: 36px;
+          margin-bottom: 40px;
           font-size: 17px;
           line-height: 1.6;
-          color: #e6f2ff;
+          opacity: 0.9;
         }
 
         .order-btn {
-          padding: 18px 42px;
+          padding: 18px 46px;
           font-size: 17px;
-          border-radius: 8px;
+          border-radius: 14px;
           border: none;
-          background: #19c2a7;
+          background: linear-gradient(135deg, #66bb6a, #2e7d32);
           color: #ffffff;
           font-weight: 700;
           cursor: pointer;
         }
 
-        .order-btn:hover {
-          background: #12a892;
-        }
-
         /* ---------------- FOOTER ---------------- */
         footer {
-          padding: 28px;
+          padding: 30px;
           text-align: center;
           font-size: 14px;
-          color: #829ab1;
-          border-top: 1px solid #e6eef6;
+          opacity: 0.6;
+          border-top: 1px solid rgba(255,255,255,0.12);
         }
       `}</style>
+
+      {/* GLOW BACKGROUND */}
+      <div className="glow" style={{ top: "10%", left: "5%" }} />
+      <div className="glow green" style={{ bottom: "15%", right: "10%" }} />
 
       {/* NAVBAR */}
       <header className="navbar">
@@ -252,7 +257,7 @@ const LandingPage = () => {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="section alt">
+      <section className="section">
         <div className="container">
           <h2>How Medigo Works</h2>
           <div className="steps">

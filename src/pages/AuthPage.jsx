@@ -5,156 +5,159 @@ const AuthPage = () => {
   const navigate = useNavigate();
 
   return (
-    <>
-      <style>{`
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          font-family: "Segoe UI", Arial, sans-serif;
-        }
+    <div style={styles.page}>
+      {/* Glow Orbs */}
+      <div style={{ ...styles.glow, top: "15%", left: "10%" }} />
+      <div style={{ ...styles.glow, bottom: "20%", right: "12%" }} />
 
-        body {
-          background: linear-gradient(135deg, #f5faff, #ffffff);
-          color: #102a43;
-        }
+      <div style={styles.card}>
+        <div style={styles.logo}>Medigo</div>
+        <div style={styles.subtitle}>No Substitutions • Full Trust</div>
 
-        .auth-wrapper {
-          min-height: 100vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 40px 20px;
-        }
+        <h2 style={styles.headline}>Continue to Medigo</h2>
+        <p style={styles.desc}>
+          Login or create an account to order medicines from the
+          <strong> exact pharmacy you trust</strong>, verified using AI.
+        </p>
 
-        .auth-card {
-          width: 100%;
-          max-width: 460px;
-          background: #ffffff;
-          border-radius: 16px;
-          padding: 50px 40px;
-          box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-          text-align: center;
-        }
+        <button
+          style={{ ...styles.btn, ...styles.loginBtn }}
+          onClick={() => navigate("/login")}
+        >
+          Login
+        </button>
 
-        .logo {
-          font-size: 28px;
-          font-weight: 800;
-          color: #0a66c2;
-          margin-bottom: 8px;
-        }
+        <button
+          style={{ ...styles.btn, ...styles.signupBtn }}
+          onClick={() => navigate("/signup")}
+        >
+          Sign Up
+        </button>
 
-        .subtitle {
-          font-size: 14px;
-          color: #486581;
-          margin-bottom: 30px;
-        }
+        <div style={styles.divider}>
+          Prototype demo • No real authentication
+        </div>
 
-        .headline {
-          font-size: 22px;
-          font-weight: 700;
-          margin-bottom: 12px;
-        }
+        <div style={styles.back} onClick={() => navigate("/")}>
+          ← Back to Home
+        </div>
 
-        .desc {
-          font-size: 15px;
-          color: #486581;
-          margin-bottom: 40px;
-          line-height: 1.5;
-        }
-
-        .auth-btn {
-          width: 100%;
-          padding: 16px;
-          margin-bottom: 16px;
-          font-size: 16px;
-          border-radius: 8px;
-          border: none;
-          cursor: pointer;
-          font-weight: 600;
-        }
-
-        .login-btn {
-          background: #0a66c2;
-          color: white;
-        }
-
-        .login-btn:hover {
-          background: #084d99;
-        }
-
-        .signup-btn {
-          background: #19c2a7;
-          color: white;
-        }
-
-        .signup-btn:hover {
-          background: #12a892;
-        }
-
-        .divider {
-          margin: 25px 0;
-          font-size: 13px;
-          color: #829ab1;
-        }
-
-        .note {
-          font-size: 13px;
-          color: #829ab1;
-          margin-top: 20px;
-        }
-
-        .back-link {
-          margin-top: 25px;
-          font-size: 14px;
-          color: #0a66c2;
-          cursor: pointer;
-          display: inline-block;
-        }
-      `}</style>
-
-      <div className="auth-wrapper">
-        <div className="auth-card">
-          <div className="logo">Medigo</div>
-          <div className="subtitle">No Substitutions. Full Trust.</div>
-
-          <div className="headline">Continue to Medigo</div>
-          <p className="desc">
-            Login or create an account to order medicines from exact stores —
-            verified using AI.
-          </p>
-
-          <button
-  className="auth-btn login-btn"
-  onClick={() => navigate("/login")}
->
-  Login
-</button>
-
-<button
-  className="auth-btn signup-btn"
-  onClick={() => navigate("/signup")}
->
-  Sign Up
-</button>
-
-
-          <div className="divider">Prototype demo • No real authentication</div>
-
-          <div
-            className="back-link"
-            onClick={() => navigate("/")}
-          >
-            ← Back to Home
-          </div>
-
-          <div className="note">
-            Future support: User • Delivery Partner • Admin
-          </div>
+        <div style={styles.note}>
+          Future support: User • Delivery Partner • Chemist
         </div>
       </div>
-    </>
+    </div>
   );
+};
+
+const styles = {
+  /* PAGE */
+  page: {
+    minHeight: "100svh",
+    position: "relative",
+    overflow: "hidden",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    background:
+      "radial-gradient(circle at top left, #0d47a1 0%, #020617 65%)",
+    fontFamily: "Inter, system-ui, sans-serif",
+    padding: "40px",
+  },
+
+  /* GLOW */
+  glow: {
+    position: "absolute",
+    width: "380px",
+    height: "380px",
+    background: "rgba(66, 165, 245, 0.45)",
+    filter: "blur(130px)",
+    borderRadius: "50%",
+    zIndex: 0,
+  },
+
+  /* CARD */
+  card: {
+    position: "relative",
+    zIndex: 1,
+    width: "100%",
+    maxWidth: "460px",
+    background: "rgba(255,255,255,0.12)",
+    backdropFilter: "blur(18px)",
+    borderRadius: "22px",
+    padding: "48px 42px",
+    textAlign: "center",
+    border: "1px solid rgba(255,255,255,0.18)",
+    boxShadow: "0 30px 80px rgba(0,0,0,0.5)",
+    color: "#fff",
+  },
+
+  logo: {
+    fontSize: "30px",
+    fontWeight: "800",
+    color: "#90caf9",
+    marginBottom: "6px",
+  },
+
+  subtitle: {
+    fontSize: "13px",
+    opacity: 0.85,
+    marginBottom: "32px",
+    letterSpacing: "0.04em",
+  },
+
+  headline: {
+    fontSize: "22px",
+    fontWeight: "700",
+    marginBottom: "14px",
+  },
+
+  desc: {
+    fontSize: "15px",
+    lineHeight: "1.6",
+    opacity: 0.85,
+    marginBottom: "34px",
+  },
+
+  btn: {
+    width: "100%",
+    padding: "16px",
+    fontSize: "16px",
+    borderRadius: "14px",
+    border: "none",
+    cursor: "pointer",
+    fontWeight: "600",
+    marginBottom: "16px",
+    transition: "transform 0.2s ease",
+  },
+
+  loginBtn: {
+    background: "linear-gradient(135deg, #42a5f5, #1e88e5)",
+    color: "#fff",
+  },
+
+  signupBtn: {
+    background: "linear-gradient(135deg, #66bb6a, #2e7d32)",
+    color: "#fff",
+  },
+
+  divider: {
+    margin: "26px 0",
+    fontSize: "13px",
+    opacity: 0.6,
+  },
+
+  back: {
+    fontSize: "14px",
+    color: "#90caf9",
+    cursor: "pointer",
+    marginBottom: "18px",
+  },
+
+  note: {
+    fontSize: "13px",
+    opacity: 0.6,
+  },
 };
 
 export default AuthPage;
